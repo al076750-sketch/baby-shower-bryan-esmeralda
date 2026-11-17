@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Revelación de Género y Baby Shower | Bryan & Esmeralda</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            background: #f7f3eb;
+            color: #5d6258;
+            min-height: 100vh;
+        }
+
+        .invitacion {
+            width: 100%;
+            max-width: 650px;
+            margin: auto;
+            background: #fffdf9;
+            min-height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* PORTADA */
+
+        .portada {
+            min-height: 600px;
+            padding: 70px 25px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                radial-gradient(circle at 15% 15%, #dfe5d8 0 35px, transparent 36px),
+                radial-gradient(circle at 85% 20%, #e8dfcf 0 45px, transparent 46px),
+                radial-gradient(circle at 10% 85%, #e8dfcf 0 30px, transparent 31px),
+                radial-gradient(circle at 90% 80%, #dfe5d8 0 40px, transparent 41px),
+                #fffdf9;
+        }
+
+        .ramita {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .pequeno {
+            font-size: 17px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #8a927f;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 46px;
+            font-weight: normal;
+            color: #60685b;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .y-baby {
+            font-size: 24px;
+            color: #b39b72;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .subtitulo {
+            font-size: 19px;
+            color: #888879;
+            margin-bottom: 30px;
+        }
+
+        .osito {
+            width: 125px;
+            height: 125px;
+            background: #d9c6aa;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 65px;
+            margin: 15px auto 30px;
+            box-shadow: 0 8px 25px rgba(100, 90, 70, .12);
+        }
+
+        .etiqueta-padres {
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #8a927f;
+            margin-bottom: 8px;
+        }
+
+        .nombres {
+            font-size: 22px;
+            color: #64695f;
+            letter-spacing: 1px;
+        }
+
+        .ampersand {
+            color: #b39b72;
+            margin: 0 8px;
+        }
+
+        /* DIVISOR */
+
+        .divisor {
+            width: 70%;
+            height: 1px;
+            background: #d8d1c3;
+            margin: 35px auto;
+        }
+
+        /* INFORMACIÓN */
+
+        .informacion {
+            padding: 20px 30px 60px;
+        }
+
+        .titulo-seccion {
+            font-size: 29px;
+            font-weight: normal;
+            color: #62695d;
+            margin-bottom: 10px;
+        }
+
+        .texto {
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #77786f;
+        }
+
+        /* FECHA */
+
+        .fecha {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            margin: 35px 0;
+        }
+
+        .fecha .numero {
+            font-size: 55px;
+            color: #b09a75;
+        }
+
+        .fecha .mes {
+            text-align: left;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #74786d;
+        }
+
+        .fecha .mes strong {
+            font-weight: normal;
+        }
+
+        .hora {
+            font-family: Arial, sans-serif;
+            font-size: 17px;
+            color: #77786f;
+            margin-bottom: 25px;
+        }
+
+        /* DIRECCIÓN */
+
+        .direccion {
+            font-family: Arial, sans-serif;
+            color: #77786f;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .direccion .lugar {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 24px;
+            color: #62695d;
+            margin-bottom: 4px;
+        }
+
+        .direccion .calle {
+            font-size: 15px;
+        }
+
+        /* BOTONES */
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            max-width: 350px;
+            margin: 30px auto;
+        }
+
+        .boton {
+            display: block;
+            padding: 15px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            transition: .3s;
+        }
+
+        .ubicacion {
+            background: #89947e;
+            color: white;
+        }
+
+        .boton:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(0, 0, 0, .12);
+        }
+
+        /* ¿DE QUÉ COLOR VIENES? */
+
+        .sorpresa {
+            margin: 30px 0 0;
+            padding: 35px 20px;
+            background: #f1eee6;
+            border-radius: 25px;
+        }
+
+        .sorpresa .emoji {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .sorpresa h2 {
+            font-weight: normal;
+            font-size: 27px;
+            color: #656c60;
+            margin-bottom: 12px;
+        }
+
+        .colores {
+            display: flex;
+            gap: 14px;
+            margin-top: 25px;
+        }
+
+        .color {
+            flex: 1;
+            padding: 22px 12px;
+            border-radius: 20px;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .color .circulo {
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+
+        .color strong {
+            display: block;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 20px;
+            font-weight: normal;
+            margin-bottom: 4px;
+        }
+
+        .azul {
+            background: #dce9f4;
+            color: #4c6a85;
+        }
+
+        .rosa {
+            background: #f6dde4;
+            color: #92566b;
+        }
+
+        /* VOTACIÓN */
+
+        .votacion {
+            margin: 30px 0 0;
+            padding: 35px 20px;
+            background: #f1eee6;
+            border-radius: 25px;
+        }
+
+        .votacion h2 {
+            font-weight: normal;
+            font-size: 27px;
+            color: #656c60;
+            margin-bottom: 12px;
+        }
+
+        .votos-botones {
+            display: flex;
+            gap: 14px;
+            margin: 25px 0 20px;
+        }
+
+        .voto-btn {
+            flex: 1;
+            padding: 16px 10px;
+            border: none;
+            border-radius: 30px;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .voto-btn.azul-btn {
+            background: #8fb4d6;
+            color: white;
+        }
+
+        .voto-btn.rosa-btn {
+            background: #e5a3b8;
+            color: white;
+        }
+
+        .voto-btn:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(0, 0, 0, .12);
+        }
+
+        .voto-btn:disabled {
+            cursor: default;
+            opacity: .55;
+        }
+
+        .voto-btn.elegido {
+            opacity: 1;
+            box-shadow: 0 0 0 3px #fffdf9, 0 0 0 5px currentColor;
+        }
+
+        .barra {
+            display: flex;
+            height: 26px;
+            border-radius: 13px;
+            overflow: hidden;
+            background: #e0dcd0;
+            margin-bottom: 12px;
+        }
+
+        .barra-azul {
+            background: #8fb4d6;
+            width: 50%;
+            transition: width .6s;
+        }
+
+        .barra-rosa {
+            background: #e5a3b8;
+            width: 50%;
+            transition: width .6s;
+        }
+
+        .conteo {
+            display: flex;
+            justify-content: space-between;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .conteo .c-azul { color: #4c6a85; }
+        .conteo .c-rosa { color: #92566b; }
+
+        .mensaje-voto {
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            color: #8a8b80;
+            margin-top: 14px;
+            min-height: 18px;
+        }
+
+        /* OSITOS DECORATIVOS */
+
+        .portada {
+            position: relative;
+        }
+
+        .deco {
+            position: absolute;
+            line-height: 1;
+            opacity: .85;
+            animation: flotar 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .deco.d1 { top: 22px;  left: 18px;  font-size: 34px; transform: rotate(-12deg); }
+        .deco.d2 { top: 40px;  right: 20px; font-size: 44px; transform: rotate(10deg);  animation-delay: .8s; }
+        .deco.d3 { bottom: 28px; left: 22px;  font-size: 40px; transform: rotate(8deg);   animation-delay: 1.6s; }
+        .deco.d4 { bottom: 40px; right: 18px; font-size: 32px; transform: rotate(-10deg); animation-delay: 2.4s; }
+        .deco.d5 { top: 46%; left: 8px;  font-size: 26px; animation-delay: 1.2s; }
+        .deco.d6 { top: 52%; right: 8px; font-size: 26px; animation-delay: 2s; }
+
+        @keyframes flotar {
+            0%, 100% { translate: 0 0; }
+            50%      { translate: 0 -8px; }
+        }
+
+        /* Ositos que recorren toda la pantalla */
+        #capaOsitos {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        #capaOsitos .osito-vuela {
+            position: absolute;
+            top: 0;
+            left: 0;
+            line-height: 1;
+            opacity: .7;
+            will-change: transform;
+            user-select: none;
+        }
+
+        .fila-ositos {
+            font-size: 22px;
+            letter-spacing: 10px;
+            margin: 30px 0;
+            opacity: .9;
+        }
+
+        .fila-ositos.chica {
+            font-size: 18px;
+            margin: 0 0 14px;
+        }
+
+        /* PIE */
+
+        footer {
+            padding: 35px 20px;
+            background: #e7e4da;
+            color: #72786d;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        footer .corazon {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            margin: 4px 0;
+        }
+
+        /* CELULAR */
+
+        @media (max-width: 500px) {
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .portada {
+                min-height: 570px;
+                padding: 50px 20px;
+            }
+
+            .nombres {
+                font-size: 18px;
+            }
+
+            .fecha .numero {
+                font-size: 48px;
+            }
+
+            .colores {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="invitacion">
+
+        <!-- PORTADA -->
+
+        <section class="portada">
+
+            <div class="ramita">
+                🌿
+            </div>
+
+            <p class="pequeno">
+                Una dulce espera
+            </p>
+
+            <h1>
+                Revelación de Género
+            </h1>
+
+            <p class="y-baby">
+                &amp; Baby Shower
+            </p>
+
+            <p class="subtitulo">
+                Un pequeño milagro está en camino...
+            </p>
+
+            <div class="osito">
+                🧸
+            </div>
+
+            <p class="etiqueta-padres">
+                Mis padres
+            </p>
+
+            <p class="nombres">
+                Bryan Campos
+                <span class="ampersand">&amp;</span>
+                Esmeralda Mendoza
+            </p>
+
+        </section>
+
+
+        <!-- INFORMACIÓN -->
+
+        <section class="informacion">
+
+            <div class="divisor"></div>
+
+            <h2 class="titulo-seccion">
+                ¡Queremos compartirlo contigo!
+            </h2>
+
+            <p class="texto">
+                Hay una personita muy especial que está por
+                llegar a nuestras vidas y queremos celebrar
+                este momento rodeados de las personas que queremos.
+            </p>
+
+
+            <!-- FECHA -->
+
+            <div class="fecha">
+
+                <div class="numero">
+                    05
+                </div>
+
+                <div class="mes">
+                    Diciembre<br>
+                    <strong>2026</strong>
+                </div>
+
+            </div>
+
+
+            <div class="fila-ositos">🧸 🧸 🧸</div>
+
+            <!-- HORA -->
+
+            <p class="hora">
+                🕑 2:00 PM
+            </p>
+
+
+            <!-- DIRECCIÓN -->
+
+            <div class="direccion">
+                <p class="lugar">Party Local</p>
+                <p class="calle">
+                    C. Girasol 18, Colonia Jardines,<br>
+                    C.P. 24060,<br>
+                    San Francisco de Campeche, Camp.
+                </p>
+            </div>
+
+
+            <!-- BOTÓN -->
+
+            <div class="botones">
+
+                <a
+                    href="https://www.google.com/maps/place/Party+Local/@19.8301182,-90.5169449,17z/data=!4m6!3m5!1s0x85f8310069118a67:0xdd70f03e09767581!8m2!3d19.8301191!4d-90.5169445!16s%2Fg%2F11mzn_nw64?hl=es&entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener"
+                    class="boton ubicacion"
+                >
+                    📍 Ver ubicación
+                </a>
+
+            </div>
+
+
+            <!-- ¿DE QUÉ COLOR VIENES? -->
+
+            <div class="sorpresa">
+
+                <div class="emoji">
+                    🎀
+                </div>
+
+                <h2>
+                    ¿Niño o niña?
+                </h2>
+
+                <p class="texto">
+                    ¡Sé parte de la sorpresa!<br>
+                    Ven vestido del color que crees que será:
+                </p>
+
+                <div class="colores">
+
+                    <div class="color azul">
+                        <div class="circulo">💙</div>
+                        <strong>Azul</strong>
+                        si crees que es niño
+                    </div>
+
+                    <div class="color rosa">
+                        <div class="circulo">🩷</div>
+                        <strong>Rosa</strong>
+                        si crees que es niña
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- VOTACIÓN -->
+
+            <div class="votacion">
+
+                <div class="fila-ositos chica">🧸</div>
+
+                <h2>¡Vota!</h2>
+
+                <p class="texto">
+                    ¿Qué crees que será? Elige una opción<br>
+                    y mira cuántos opinan lo mismo que tú.
+                </p>
+
+                <div class="votos-botones">
+                    <button class="voto-btn azul-btn" data-voto="nino">💙 Niño</button>
+                    <button class="voto-btn rosa-btn" data-voto="nina">🩷 Niña</button>
+                </div>
+
+                <div class="barra">
+                    <div class="barra-azul" id="barraAzul"></div>
+                    <div class="barra-rosa" id="barraRosa"></div>
+                </div>
+
+                <div class="conteo">
+                    <span class="c-azul">💙 Niño: <strong id="cntNino">0</strong></span>
+                    <span class="c-rosa">🩷 Niña: <strong id="cntNina">0</strong></span>
+                </div>
+
+                <p class="mensaje-voto" id="mensajeVoto"></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PIE DE PÁGINA -->
+
+        <footer>
+
+            <div class="fila-ositos chica">🧸 ♡ 🧸</div>
+
+            <p>
+                Con mucho amor,
+            </p>
+
+            <p>
+                Bryan &amp; Esmeralda
+            </p>
+
+        </footer>
+
+    </div>
+
+    <div id="capaOsitos" aria-hidden="true"></div>
+
+    <script>
+        /* OSITOS QUE FLOTAN POR TODA LA PANTALLA */
+        (function () {
+            const capa = document.getElementById("capaOsitos");
+            const CANTIDAD = 8;
+            const aleatorio = (a, b) => a + Math.random() * (b - a);
+
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+            function crearOsito() {
+                const el = document.createElement("span");
+                el.className = "osito-vuela";
+                el.textContent = "🧸";
+                el.style.fontSize = aleatorio(26, 46) + "px";
+                capa.appendChild(el);
+
+                let x = aleatorio(0, window.innerWidth - 50);
+                let y = aleatorio(0, window.innerHeight - 50);
+                let giro = aleatorio(-20, 20);
+
+                function mover() {
+                    const nx = aleatorio(0, Math.max(0, window.innerWidth - 50));
+                    const ny = aleatorio(0, Math.max(0, window.innerHeight - 50));
+                    const ngiro = aleatorio(-25, 25);
+
+                    const anim = el.animate(
+                        [
+                            { transform: `translate(${x}px, ${y}px) rotate(${giro}deg)` },
+                            { transform: `translate(${nx}px, ${ny}px) rotate(${ngiro}deg)` }
+                        ],
+                        { duration: aleatorio(10000, 18000), easing: "ease-in-out", fill: "forwards" }
+                    );
+
+                    anim.onfinish = function () {
+                        x = nx; y = ny; giro = ngiro;
+                        mover();
+                    };
+                }
+
+                mover();
+            }
+
+            for (let i = 0; i < CANTIDAD; i++) crearOsito();
+        })();
+    </script>
+
+    <script>
+        /*
+            VOTACIÓN COMPARTIDA
+            Para que TODOS los invitados vean los mismos votos, pega aquí la URL
+            de tu Firebase Realtime Database (sin "/" al final), por ejemplo:
+            "https://mi-baby-shower-default-rtdb.firebaseio.com"
+
+            Si la dejas vacía, los votos solo se guardan en el dispositivo de
+            cada persona (sirve para probar, pero no suma entre invitados).
+        */
+        const FIREBASE_URL = "";
+
+        const LLAVE_LOCAL = "votosBabyShower";
+        const LLAVE_MI_VOTO = "miVotoBabyShower";
+
+        const botones = document.querySelectorAll(".voto-btn");
+        const mensaje = document.getElementById("mensajeVoto");
+
+        function pintar(nino, nina) {
+            const total = nino + nina;
+            document.getElementById("cntNino").textContent = nino;
+            document.getElementById("cntNina").textContent = nina;
+            document.getElementById("barraAzul").style.width = (total ? nino / total * 100 : 50) + "%";
+            document.getElementById("barraRosa").style.width = (total ? nina / total * 100 : 50) + "%";
+        }
+
+        function bloquear(voto) {
+            botones.forEach(b => {
+                b.disabled = true;
+                if (b.dataset.voto === voto) b.classList.add("elegido");
+            });
+            mensaje.textContent = "¡Gracias por votar! 💛";
+        }
+
+        async function obtenerConteo() {
+            if (FIREBASE_URL) {
+                const r = await fetch(FIREBASE_URL + "/votos.json");
+                const datos = await r.json();
+                let nino = 0, nina = 0;
+                Object.values(datos || {}).forEach(v => {
+                    if (v.voto === "nino") nino++;
+                    if (v.voto === "nina") nina++;
+                });
+                return { nino, nina };
+            }
+            try {
+                return JSON.parse(localStorage.getItem(LLAVE_LOCAL)) || { nino: 0, nina: 0 };
+            } catch (e) {
+                return { nino: 0, nina: 0 };
+            }
+        }
+
+        async function guardarVoto(voto) {
+            if (FIREBASE_URL) {
+                await fetch(FIREBASE_URL + "/votos.json", {
+                    method: "POST",
+                    body: JSON.stringify({ voto: voto, fecha: Date.now() })
+                });
+            } else {
+                const c = await obtenerConteo();
+                c[voto]++;
+                try { localStorage.setItem(LLAVE_LOCAL, JSON.stringify(c)); } catch (e) {}
+            }
+        }
+
+        async function actualizar() {
+            try {
+                const c = await obtenerConteo();
+                pintar(c.nino, c.nina);
+            } catch (e) {
+                mensaje.textContent = "No se pudieron cargar los votos.";
+            }
+        }
+
+        botones.forEach(b => {
+            b.addEventListener("click", async () => {
+                const voto = b.dataset.voto;
+                botones.forEach(x => x.disabled = true);
+                try {
+                    await guardarVoto(voto);
+                    try { localStorage.setItem(LLAVE_MI_VOTO, voto); } catch (e) {}
+                    bloquear(voto);
+                    await actualizar();
+                } catch (e) {
+                    botones.forEach(x => x.disabled = false);
+                    mensaje.textContent = "No se pudo guardar tu voto, intenta de nuevo.";
+                }
+            });
+        });
+
+        let yaVoto = null;
+        try { yaVoto = localStorage.getItem(LLAVE_MI_VOTO); } catch (e) {}
+        if (yaVoto) bloquear(yaVoto);
+        actualizar();
+        if (FIREBASE_URL) setInterval(actualizar, 15000);
+    </script>
+
+</body>
+</html>
